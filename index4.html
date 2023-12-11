@@ -1,0 +1,232 @@
+<title>Calculadora de Papel de Parede</title>
+    <style>
+        /* styles.css */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            width: 250px;
+            padding: 20px;
+            
+        }
+
+        .input {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select,
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: rgb(255, 238, 0);
+            color: rgb(0, 0, 0);
+            padding: 9px 11px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 2.2px solid #000000;
+        }
+
+        button:hover {
+            background-color: rgb(255, 238, 0);
+        }
+    </style>
+</head>
+<body>
+    <button onclick="toggleCalculadora()"><img src="https://a.imagem.app/ow2CiW.png" alt="ow2CiW.png"/></button>
+    <div id="calculadora" class="input">
+        <label for="tamanhoRolo">Tamanho do Rolo:</label>
+        <select id="tamanhoRolo">
+            <!-- Opções de tamanhos de rolo -->
+                                <option value="1x0.30">1m x 30cm</option>
+                                <option value="2x0.30">2m x 30cm</option>
+                                <option value="3x0.30">3m x 30cm</option>
+                                <option value="5x0.30">5m x 30cm</option>
+                                <option value="6x0.30">6m x 30cm</option>
+                                <option value="10x0.30">10m x 30cm</option>
+                                <option value="1x0.46">1m x 46cm</option>
+                                <option value="2x0.46">2m x 46cm</option>
+                                <option value="3x0.46">3m x 46cm</option>
+                                <option value="5x0.46">5m x 46cm</option>
+                                <option value="6x0.46">6m x 46cm</option>
+                                <option value="10x0.46">10m x 46cm</option>
+                                <option value="1x0.50">1m x 50cm</option>
+                                <option value="2x0.50">2m x 50cm</option>
+                                <option value="3x0.50">3m x 50cm</option>
+                                <option value="5x0.50">5m x 50cm</option>
+                                <option value="6x0.50">6m x 50cm</option>
+                                <option value="10x0.50">10m x 50cm</option>
+                                <option value="1x0.60">1m x 60cm</option>
+                                <option value="2x0.60">2m x 60cm</option>
+                                <option value="3x0.60">3m x 60cm</option>
+                                <option value="5x0.60">5m x 60cm</option>
+                                <option value="6x0.60">6m x 60cm</option>
+                                <option value="10x0.60">10m x 60cm</option>
+                                <option value="1x0.68">1m x 68cm</option>
+                                <option value="2x0.68">2m x 68cm</option>
+                                <option value="3x0.68">3m x 68cm</option>
+                                <option value="5x0.68">5m x 68cm</option>
+                                <option value="6x0.68">6m x 68cm</option>
+                                <option value="10x0.68">10m x 68cm</option>
+                                <option value="1x0.70">1m x 70cm</option>
+                                <option value="2x0.70">2m x 70cm</option>
+                                <option value="3x0.70">3m x 70cm</option>
+                                <option value="5x0.70">5m x 70cm</option>
+                                <option value="6x0.70">6m x 70cm</option>
+                                <option value="10x0.70">10m x 70cm</option>
+                                <option value="1x1">1m x 1m</option>
+                                <option value="2x1">2m x 1m</option>
+                                <option value="3x1">3m x 1m</option>
+                                <option value="5x1">5m x 1m</option>
+                                <option value="6x1">6m x 1m</option>
+                                <option value="10x1">10m x 1m</option>
+                                <option value="1x1.20">1m x 1,20m</option>
+                                <option value="2x1.20">2m x 1,20m</option>
+                                <option value="3x1.20">3m x 1,20m</option>
+                                <option value="5x1.20">5m x 1,20m</option>
+                                <option value="6x1.20">6m x 1,20m</option>
+                                <option value="10x1.20">10m x 1,20m</option>
+                                <option value="1x1.38">1m x 1,38m</option>
+                                <option value="2x1.38">2m x 1,38m</option>
+                                <option value="3x1.38">3m x 1,38m</option>
+                                <option value="5x1.38">5m x 1,38m</option>
+                                <option value="6x1.38">6m x 1,38m</option>
+                                <option value="10x1.38">10m x 1,38m</option>
+                                <option value="1x1.50">1m x 1,50m</option>
+                                <option value="2x1.50">2m x 1,50m</option>
+                                <option value="3x1.50">3m x 1,50m</option>
+                                <option value="5x1.50">5m x 1,50m</option>
+                                <option value="6x1.50">6m x 1,50m</option>
+                                <option value="10x1.50">10m x 1,50m</option>
+            <!-- Adicione outras opções conforme necessário -->
+        </select>
+
+        <label for="alturaParede">Altura da Parede (m):</label>
+        <input type="number" id="alturaParede" step="0" placeholder="Altura da Parede">
+
+        <label for="larguraParede">Largura da Parede (m):</label>
+        <input type="number" id="larguraParede" step="0" placeholder="Largura da Parede">
+
+        <button onclick="calcularRolo()">Calcular</button>
+    </div>
+
+    <div id="resultado"></div>
+
+    <script>
+        function toggleCalculadora() {
+            var calculadora = document.getElementById("calculadora");
+            var resultado = document.getElementById("resultado");
+
+            if (calculadora.style.display === "none" || calculadora.style.display === "") {
+                calculadora.style.display = "block";
+                resultado.innerHTML = ""; // Limpar resultado ao mostrar a calculadora
+            } else {
+                calculadora.style.display = "none";
+            }
+        }
+        function calcularRolo() {
+    var tamanhoRolo = document.getElementById("tamanhoRolo").value;
+    var alturaParede = parseFloat(document.getElementById("alturaParede").value);
+    var larguraParede = parseFloat(document.getElementById("larguraParede").value);
+
+    var areasPorTamanho = {
+        "1x0.30": 0.30,
+        "2x0.30": 0.60,
+        "3x0.30": 0.90,
+        "5x0.30": 1.50,
+        "6x0.30": 1.80,
+        "10x0.30": 3,
+        "1x0.46": 0.46,
+        "2x0.46": 0.92,
+        "3x0.46": 1.38,
+        "5x0.46": 2.30,
+        "6x0.46": 2.76,
+        "10x0.46": 4.60,
+        "1x0.50": 0.50,
+        "2x0.50": 1,
+        "3x0.50": 1.50,
+        "5x0.50": 2.50,
+        "6x0.50": 3,
+        "10x0.50": 5,
+        "1x0.60": 0.60,
+        "2x0.60": 1.20,
+        "3x0.60": 1.80,
+        "5x0.60": 3,
+        "6x0.60": 3.60,
+        "10x0.60": 6,
+        "1x0.68": 0.68,
+        "2x0.68": 1.36,
+        "3x0.68": 2.04,
+        "5x0.68": 3.40,
+        "6x0.68": 4.08,
+        "10x0.68": 6.80,
+        "1x0.70": 0.70,
+        "2x0.70": 1.40,
+        "3x0.70": 2.10,
+        "5x0.70": 3.50,
+        "6x0.70": 4.20,
+        "10x0.70": 7,
+        "1x1": 1,
+        "2x1": 2,
+        "3x1": 3,
+        "5x1": 5,
+        "6x1": 6,
+        "10x1": 10,
+        "1x1.20": 1.20,
+        "2x1.20": 2.40,
+        "3x1.20": 3.60,
+        "5x1.20": 6,
+        "6x1.20": 7.20,
+        "10x1.20": 12,
+        "1x1.38": 1.38,
+        "2x138": 2.76,
+        "3x1.38": 4.14,
+        "5x1.38": 6.9,
+        "6x1.38": 8.28,
+        "10x1.38": 13.8,
+        "1x1.50": 1.50,
+        "2x1.50": 3,
+        "3x1.50": 4.50,
+        "5x1.50": 7.50,
+        "6x1.50": 9,
+        "10x1.50": 15,
+      
+        };
+
+        if (!areasPorTamanho.hasOwnProperty(tamanhoRolo)) {
+        
+        
+            document.getElementById("resultado").innerHTML = "Selecione dimensões válidas para o rolo.";
+                    return;
+                }
+            
+                var areaTotal = alturaParede * larguraParede;
+                var areaRolo = areasPorTamanho[tamanhoRolo];
+            
+                if (areaRolo <= 0) {
+                    document.getElementById("resultado").innerHTML = "Selecione dimensões válidas para a área desejada.";
+                    return;
+                }
+            
+                var quantidadeDeRolos = Math.ceil(areaTotal / areaRolo);
+            
+                document.getElementById("resultado").innerHTML = "Quantidade de rolos necessários: " + quantidadeDeRolos;
+            }
+            // Sua função calcularRolo existente aqui
+        
+    </script>
+</body>
